@@ -118,10 +118,10 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 //        System.out.println("printJobs is not implemented yet");
         if (someJobs.isEmpty()) {
-            System.out.println("No Results");
+            System.out.printf("No Results");
         } else {
-            int numResults = someJobs.size();
-            System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n" + numResults + " result" + ((numResults > 1) ? "s" : "") );
+//            int numResults = someJobs.size();
+//            System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n" + numResults + " result" + ((numResults > 1) ? "s" : "") );
             for (HashMap<String, String> job : someJobs) {
                 System.out.println(
                 "\n*****" +
