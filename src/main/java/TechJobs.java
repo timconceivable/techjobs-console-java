@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -29,7 +28,6 @@ public class TechJobs {
 
         // Allow the user to search until they manually quit
         while (true) {
-
             String actionChoice = getUserSelection("View jobs by (type 'x' to quit):", actionChoices);
 
             if (actionChoice == null) {
@@ -86,12 +84,11 @@ public class TechJobs {
         }
 
         do {
-
             System.out.println("\n" + menuHeader);
 
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
-                System.out.println("" + j + " - " + choices.get(choiceKeys[j]));
+                System.out.println(j + " - " + choices.get(choiceKeys[j]));
             }
 
             if (in.hasNextInt()) {
@@ -119,7 +116,23 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+//        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()) {
+            System.out.println("No Results");
+        } else {
+            int numResults = someJobs.size();
+            System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n" + numResults + " result" + ((numResults > 1) ? "s" : "") );
+            for (HashMap<String, String> job : someJobs) {
+                System.out.println(
+                "\n*****" +
+                "\nposition type: " + job.get("position type") +
+                "\nname: " + job.get("name") +
+                "\nemployer: " + job.get("employer") +
+                "\nlocation: " + job.get("location") +
+                "\ncore competency: " + job.get("core competency") +
+                "\n*****"
+                );
+            }
+        }
     }
 }
